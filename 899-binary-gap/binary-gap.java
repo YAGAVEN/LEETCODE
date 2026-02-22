@@ -11,9 +11,7 @@ class Solution {
         while(i<str.length() && j<str.length()){
             if(str.charAt(i) == '1' && str.charAt(j)== '1' ){
                 int d = j-i;
-                if(d>ma){
-                    ma=d;
-                }
+                ma = Math.max(ma,d);
                 i=j;
             }
             j++;
