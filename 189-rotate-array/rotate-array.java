@@ -4,6 +4,7 @@ class Solution {
         for(int i:nums){
             list.add(i);
         }
+        k=k%nums.length;
         for(int i=0;i<k;i++){
             int last = list.removeLast();
             list.addFirst(last);
