@@ -1,25 +1,22 @@
 class Solution {
     public int longestConsecutive(int[] nums) {
-        HashSet<Integer>set = new HashSet<>();
+        HashSet<Integer> set = new HashSet<>();
         for(int i:nums){
             set.add(i);
         }
-        int lcs = 0;
-        int c = 0;
-        for(int i : set){
+        int maxlen = 0;
+        for(int i:set){
             if(!set.contains(i-1)){
-                c = con(set,i);
-                lcs = Math.max(lcs,c);
+                int cur = i;
+                int len = 1;
+                while(set.contains(cur+1)){
+                    cur++;
+                    len++;
+                }
+                maxlen = Math.max(len,maxlen);
             }
         }
-        return lcs;
-    }
-    public int con(Set<Integer> set, int i){
-        int co = 1;
-        while(set.contains(i+1)){
-            i++;
-            co++;
-        }
-        return co;
+        return maxlen;
+        
     }
 }
