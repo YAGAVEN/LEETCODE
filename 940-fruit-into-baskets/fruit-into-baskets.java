@@ -15,11 +15,4 @@ class Solution {
         }
         return ma;
     }
-    public static int cod(int i,int j,int[] fruits){
-        HashSet<Integer> set = new HashSet<>();
-        for(int k=i;k<=j;k++){
-            set.add(fruits[k]);
-        }
-        return set.size();
-    }
 }
