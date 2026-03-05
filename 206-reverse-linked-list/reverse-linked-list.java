@@ -18,5 +18,6 @@ class Solution {
             head = next;
         }
         return newhead;
+        
     }
 }
