@@ -1,15 +1,17 @@
 class Solution {
-    public int climbStairs(int n) {
-        if(n<=2)return n;
-        int p2 = 1;
-        int p1 = 2;
-        for(int i=3;i<=n;i++){
-            int c = p1+p2;
-            p2 = p1;
-            p1 =c; 
-        }
-        return p1;
+public int climbStairs(int n) {
+    int[] dp = new int[n+1];
+    Arrays.fill(dp, -1);
+    return helper(n, dp);
+}
 
-    }
+private int helper(int n, int[] dp) {
+    if(n==1) return 1;
+    if(n==2) return 2;
 
+    if(dp[n] != -1) return dp[n];
+
+    dp[n] = helper(n-1, dp) + helper(n-2, dp);
+    return dp[n];
+}
 }
