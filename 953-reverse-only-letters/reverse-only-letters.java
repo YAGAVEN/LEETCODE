@@ -17,7 +17,8 @@ class Solution {
                 sk.append(c);
             }
         }
-        return sk.toString();
+        s = sk.toString();
+        return s;
         
     }
 }
