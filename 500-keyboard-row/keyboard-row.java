@@ -12,12 +12,23 @@ class Solution {
             for(char c : str.toCharArray()){
                 if(!row1.contains(String.valueOf(Character.toLowerCase(c)))){
                     r1  = false;
+                    break;
                 }
-                if(!row2.contains(String.valueOf(Character.toLowerCase(c)))){
-                    r2  = false;
+            }
+            if(r1==false){
+                for(char c : str.toCharArray()){
+                    if(!row2.contains(String.valueOf(Character.toLowerCase(c)))){
+                        r2  = false;
+                        break;
+                    }
                 }
-                if(!row3.contains(String.valueOf(Character.toLowerCase(c)))){
-                    r3  = false;
+            }
+            if(r2==false){
+                for(char c : str.toCharArray()){
+                    if(!row3.contains(String.valueOf(Character.toLowerCase(c)))){
+                        r3  = false;
+                        break;
+                    }
                 }
             }
             if(r1 || r2 ||r3){
